@@ -1,0 +1,26 @@
+- modificar o cenario para ficar assim[
+    ainda separado por 2 calçadas
+    em cima 4 pistas de carro, 2 pra um lado 2 pro outro lado
+    no meio 2 trilhos de metro passando muito mais rápido que os carros, 1 pra um lado e 1 pro outro lado, bem raramente o "vecao" corre muito rapido no trilho de metro
+    em baixo 4 pistas de carro, 2 pra um lado 2 pro outro lado
+    ]
+- adição de placar de pontuação e item coletavel nas ruas e trilhos com desenho de chapel (chapel.png), com opção de ser algo "bom" ou "ruim"[
+    chapel_bom = 1 ponto
+    chapel_ruim = partida fica com aparência de "VGA com artefatos" e perde todos os pontos
+    ]
+- adição de sons no jogo [
+    abertura_do_jogo = "assets/barulho/salve.mp3"
+    iniciar_partida = "assets/barulho/ismaili.mp3"
+    chapel_bom = "assets/barulho/vaitomano.mp3"
+    chapel_ruim = "assets/barulho/chapel.mp3"
+    ganhar = "assets/barulho/lisolisoliso.mp3"
+    colisao = "assets/barulho/secosecoseco.mp3"
+    colisao = "assets/barulho/caraifi.mp3"
+    colisao = "assets/barulho/gap.mp3"
+    ]
+- menu chamado "remendo" para ajustar as variáveis [
+    dificuldade = velocidade dos carros
+    chapelada = chance do chapel ser ruim
+    vecao = probabilidade do vecao aparecer
+
+    ]
