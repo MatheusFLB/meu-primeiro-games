@@ -1,6 +1,6 @@
-res://scenes/Car.tscn::e025945e1627cee794c1c5f3811827c3::1769525433::res://.godot/exported/133200997/export-7218441faffdad4a8a7bdb2268b95e3f-Car.scn
-res://scenes/Game.tscn::dbf03cf168d7e0078aee6fc463489586::1769702955::res://.godot/exported/133200997/export-ff8ceb9b2bd5b48777d3d52e811276ab-Game.scn
-res://scenes/Main.tscn::b416379d481defb8a7969450a1af4fcb::1769708989::res://.godot/exported/133200997/export-4a24720ee5e787dbe30abc634fa3679d-Main.scn
-res://scenes/Player.tscn::8fb0bf9a351c0710b597c1f7283b41a8::1769549946::res://.godot/exported/133200997/export-e8220e74d1354b9e6b168b513689419c-Player.scn
-res://scenes/UI.tscn::686ebf05e7545a6aba8a721465de2f86::1769693374::res://.godot/exported/133200997/export-6ca4bde5298d4b015fcc65c6eb5e9ea1-UI.scn
-res://scenes/Chapel.tscn::c76d53118afef157d100e0af0b6b7073::1769689030::res://.godot/exported/133200997/export-2ecf15381424da8d202e16d861a97cfa-Chapel.scn
+res://src/scenes/Car.tscn::5cbd396a131b5c4650f1d634ec4f68b0::1769715833::res://.godot/exported/133200997/export-5b6ecfcc09fc1273b531851ce806fba0-Car.scn
+res://src/scenes/Chapel.tscn::cd3daedbbade1ea1feebccf9d9ac7918::1769715897::res://.godot/exported/133200997/export-4aaf3b17b5440940c81992a8e01b22b1-Chapel.scn
+res://src/scenes/Game.tscn::9f948fc4f54824cf751b7fa1bfcee24c::1769715991::res://.godot/exported/133200997/export-2ad1466067e837473ea569692018c66a-Game.scn
+res://src/scenes/Main.tscn::a568b4da7e301e372735dd60a2cf5c0a::1769716009::res://.godot/exported/133200997/export-85366c8eba3a3d6499d4799990460995-Main.scn
+res://src/scenes/Player.tscn::7691264ae8bbadff813bfa81c61208c1::1769716128::res://.godot/exported/133200997/export-62a27216dfa79b69fc8e1c3d6d0492cf-Player.scn
+res://src/scenes/UI.tscn::07d50a976949e06348efd2ff1f8d52bc::1769716313::res://.godot/exported/133200997/export-ad3d2089e9b60ea40fd382a09749c642-UI.scn

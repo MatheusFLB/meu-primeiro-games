@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/scripts/car.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/car_red.png" id="2"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(180, 64)
+
+[node name="Car" type="Area2D"]
+script = ExtResource("1")
+sprite_texture = ExtResource("2")
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.9, 0.25, 0.2, 1)
+polygon = PackedVector2Array(-90, -32, 90, -32, 90, 32, -90, 32)
