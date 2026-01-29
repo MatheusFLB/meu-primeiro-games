@@ -1,14 +1,20 @@
-- modificar o cenario para ficar assim[
+- tenha certeza de que o controle por toque na versão mobile seja do tipo de arrastar o dedo na tela para mover o personagem 
+- modificar o cenario para ficar assim [
     ainda separado por 2 calçadas
     em cima 4 pistas de carro, 2 pra um lado 2 pro outro lado
-    no meio 2 trilhos de metro passando muito mais rápido que os carros, 1 pra um lado e 1 pro outro lado, bem raramente o "vecao" corre muito rapido no trilho de metro
+    no meio 2 trilhos de metro passando muito mais rápido que os carros, 1 pra um lado e 1 pro outro lado, bem raramente o "vecao" corre muito rapido no trilhos de metro
     em baixo 4 pistas de carro, 2 pra um lado 2 pro outro lado
     ]
-- adição de placar de pontuação e item coletavel nas ruas e trilhos com desenho de chapel (chapel.png), com opção de ser algo "bom" ou "ruim"[
+- adição de placar de pontuação e item coletavel nas ruas e trilhos de metro com desenho de chapel (chapel.png), com opção de ser algo "chapel_bom" ou "chapel_ruim"[
     chapel_bom = 1 ponto
     chapel_ruim = partida fica com aparência de "VGA com artefatos" e perde todos os pontos
     ]
-- adição de sons no jogo [
+- menu chamado "remendo" para ajustar as variáveis [
+    dificuldade = velocidade dos carros
+    chapelada = chance do chapel ser ruim
+    vecao = probabilidade do vecao aparecer no geral, essa variável se aplica a aparição dele na rua e no trilhos de metro, a variavel da rua é sempre maior que a varaivel do trilhos de metro
+    ]
+- adição de sons no jogo, varaiveis repetidas devem tocar um dos sons apontados de forma aleatória [
     abertura_do_jogo = "assets/barulho/salve.mp3"
     iniciar_partida = "assets/barulho/ismaili.mp3"
     chapel_bom = "assets/barulho/vaitomano.mp3"
@@ -18,9 +24,181 @@
     colisao = "assets/barulho/caraifi.mp3"
     colisao = "assets/barulho/gap.mp3"
     ]
-- menu chamado "remendo" para ajustar as variáveis [
-    dificuldade = velocidade dos carros
-    chapelada = chance do chapel ser ruim
-    vecao = probabilidade do vecao aparecer
 
+
+
+=================================
+
+
+
+- o chapel_ruim está pintado de vermelho, ele deve ter a mesma aparencia do chapel_bom justamente para confundir o jogador
+
+- "VGA com artefatos" funcionou mas ficou parecendo tv antiga, tem que ficar parecendo VGA quebrada gerando artefatos
+
+- o trilhos de metro devem ter apenas os objetos metro e vecão_jato, carro não passa no trilhos de metro
+
+- a variavel vecao no menu remendo tede ir até 100% para poder deixar o jogo 100% vecao
+
+
+
+=================================
+
+
+
+- o botão remendo está fora do bloco botões do inicio, coloque ele nesse bloco
+
+- modifique a opção dificuldade para que seja um campo numérico, onde o jogador possa escolher a velocidade como se fosse direto no código, livre para qualquer valor, por padrão vem 0.5
+
+- alinhe o jogador com o cenário, ele está um pouco deslocado em todos os angulos
+
+
+
+=================================
+
+
+
+alinhe o "frog.png" por algum motivo ele não fica alinhado com as linhas, deixe ele centralizado em cada linha [
+    rua
+    rua
+    rua
+    rua
+    calçada
+    trilhos de metro
+    trilhos de metro
+    calçada
+    rua
+    rua
+    rua
+    rua
     ]
+
+
+
+=================================
+
+
+
+- adicionei o arquivo "melodia.mp3", use esse arquivo como arquivo de música de fundo do jogo, ele deve tocar em loop durante todo o jogo independente de onde estiver
+
+- o alinhamento funcionou mas o jogador venceu sem chegar na grama do outro lado, ao chegar na ultima rua ele já venceu, corrija isso, o jogador só vence ao chegar na grama do outro lado
+
+
+
+=================================
+
+
+
+- algumas ruas e trilhos o jogador não está sendo atingido pelos objetos, corrija
+
+- agora ele vence ao fazer flip na grama do outro lado, ele precisa vencer ao chegar na grama, ele chega mas não vence, vence somente se for pro lado, deve vencer ao chegar na grama
+
+
+
+=================================
+
+
+
+perfeito funcionou todas as ruas e a vitória correta!
+
+agora vamos ajustar as ruas, elas não estão do mesmo tamanho, faça as ruas serem equiditantes, todas visualmente do mesmo tamanho
+
+
+
+=================================
+
+
+
+ficou melhor mas não está perfeito, as ruas estão equidistantes mas estão com linhas no centro de cada rua, deveria ter linhas nas laterais de cada rua, separando as ruas, mas não no centro de cada rua
+
+estamos progredindo, agora estamos nos entendendo melhor
+- retire as faixas da camada rua e crie camadas faixa-branca e faixa-amarela [
+    faixa-branca linha pontilhada como está, separando as ruas da mesma diração
+    faixa-amarela linha continua, separando as ruas de direções opostas
+]
+
+não usar faixas nos cantos das ruas
+
+
+
+=================================
+
+
+
+analise o print para corrigir o visual do cenário
+- faixa pontilhada GROSSA deve sair, ela não deve existir
+- faixa amarela entre os trilhos de metro devem sair
+- faixa pontilhada na calçada deve sair
+
+
+
+=================================
+
+
+
+o trilho está feito com quadrados e uma linha
+ele deve ser feito igual um de verdade, da seguinte forma [
+    linhas horizontais de ferro
+    madeiras verticais em baixo dos ferros
+]
+
+
+
+=================================
+
+
+
+as faixas das ruas ficaram perfeitas, agora vamos ajustar os trilhos
+- as madeiras ficaram em cima dosferros, no trilho de verdade os ferros ficam em cima das madeiras, corrija isso
+- agora tem um desenho de trilho centralizado  entre as duas faixas de trilho, faça 2 trilhos 1 para cada faixa de trilho, ou seja, 2 trilhos no total, um em cada faixa de trilho
+
+
+
+=================================
+
+
+
+ok, vamos finalizar para a compilação final
+- os botões do menu inicial não estão equidistantes, coloque eles com espaçamento iguais na caixa de botões
+- já inicio o jogo com movimento nas ruas, os carros somente aparecem após alguns segundos de jogo
+
+
+
+==================================
+
+
+
+compilei para .apk e ficou muito bom, mas precisamos melhorar alguns pontos
+- o icone do app ficou meio cortado, ajuste o icone para ficar completo, ele deve usar a imagem "frog.png" como icone do app sem bordas ou cortes
+- quando abre o app e espera o carregamento aparece a imagem "frog.png", ajuste para ficar uma tela preta sem imagem nenhuma
+- na parte "remendo" os ajustes ficaram muito pequenos para uso por toque, almente o tamanho para ficar mais fácil de usar por toque
+
+
+
+==================================
+
+
+
+- agora vamos revisar o código para otimizar, preciso ter apenas 2 pastas principais no projeto [
+    assets
+    src
+]
+    - a pasta "assets" deve conter todas as subpastas de assets (imagens, sons, etc)
+    - a pasta src deve conter todo o código fonte do games
+
+- a pasta assets e seus derivados devem ter a possibilidade de modificação das imagens e sons sem quebrar a compilação do games, caso alguém queira trocar alguma imagem ou som futuramente
+
+
+
+==================================
+
+
+
+- compilei em .apk e ficou perfeito!!! estou muito satisfeito com o resultado final do games!!!
+    - agora vamos compilar para .aab para postar na play store
+    - o que eu preciso fazer para compilar para .aab e deixar pronto para poder postar na playstore com o preço de R$ 1,99?
+
+
+==================================
+
+
+

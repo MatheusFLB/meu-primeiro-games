@@ -7,6 +7,9 @@ signal pause_pressed
 signal resume_pressed
 signal menu_pressed
 
+@onready var _vga_overlay: ColorRect = $VgaOverlay
+@onready var _score_label: Label = $ScoreLabel
+
 @onready var _overlay: Control = $Overlay
 @onready var _overlay_message: Label = $Overlay/Panel/VBoxContainer/MessageLabel
 @onready var _overlay_button: Button = $Overlay/Panel/VBoxContainer/RestartButton
@@ -23,16 +26,21 @@ signal menu_pressed
 @onready var _left_button: Button = $DPad/LeftButton
 @onready var _right_button: Button = $DPad/RightButton
 
-var _is_mobile: bool = false
-
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	_is_mobile = OS.has_feature("mobile")
+	set_score(0)
+	set_vga_enabled(false)
 	hide_overlay()
 	hide_pause_overlay()
 	_connect_buttons()
-	set_dpad_enabled(true)
+	set_dpad_enabled(false)
 	set_pause_button_visible(true)
+
+func set_score(score: int) -> void:
+	_score_label.text = "Pontos: %d" % score
+
+func set_vga_enabled(enabled: bool) -> void:
+	_vga_overlay.visible = enabled
 
 func show_overlay(message: String, button_text: String = "Reiniciar") -> void:
 	_overlay_message.text = message
@@ -44,7 +52,7 @@ func show_overlay(message: String, button_text: String = "Reiniciar") -> void:
 func hide_overlay() -> void:
 	_overlay.visible = false
 	set_pause_button_visible(true)
-	set_dpad_enabled(true)
+	set_dpad_enabled(false)
 
 func show_pause_overlay() -> void:
 	_pause_overlay.visible = true
@@ -54,19 +62,18 @@ func show_pause_overlay() -> void:
 func hide_pause_overlay() -> void:
 	_pause_overlay.visible = false
 	set_pause_button_visible(true)
-	set_dpad_enabled(true)
+	set_dpad_enabled(false)
 
-func set_pause_button_visible(visible: bool) -> void:
-	_pause_button.visible = visible
-	_pause_button.disabled = not visible
+func set_pause_button_visible(visible_value: bool) -> void:
+	_pause_button.visible = visible_value
+	_pause_button.disabled = not visible_value
 
-func set_dpad_enabled(enabled: bool) -> void:
-	var show: bool = enabled and _is_mobile
-	_dpad.visible = show
-	_up_button.disabled = not show
-	_down_button.disabled = not show
-	_left_button.disabled = not show
-	_right_button.disabled = not show
+func set_dpad_enabled(_enabled: bool) -> void:
+	_dpad.visible = false
+	_up_button.disabled = true
+	_down_button.disabled = true
+	_left_button.disabled = true
+	_right_button.disabled = true
 
 func _connect_buttons() -> void:
 	if not _overlay_button.pressed.is_connected(_on_restart_pressed):
